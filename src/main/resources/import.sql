@@ -105,3 +105,33 @@ insert into ProductIngredient (id, product_id, ingredient_id, grammage) values (
 
 -- Relation entre Produit 5 et Ingrédient 8
 insert into ProductIngredient (id, product_id, ingredient_id, grammage) values (11, 5, 8, 75);
+
+-- Processus pour Produit 1
+insert into Process (id, nom, description, product_id, commentaire) values
+(1, 'Assemblage du Freesebe Classique', 'Processus d''assemblage du Freesebe Classique.', 1, 'Assemblage réalisé avec précision.'),
+(2, 'Inspection de qualité du Freesebe Classique', 'Vérification de la qualité du Freesebe Classique.', 1, 'Contrôle qualité effectué pour assurer la conformité.');
+
+-- Processus pour Produit 2
+insert into Process (id, nom, description, product_id, commentaire) values
+(3, 'Assemblage du Freesebe Pro', 'Processus d''assemblage du Freesebe Pro.', 2, 'Assemblage professionnel pour une haute précision.'),
+(4, 'Vérification de qualité du Freesebe Pro', 'Contrôle qualité du Freesebe Pro.', 2, 'Inspection approfondie pour garantir la qualité.');
+
+-- Processus pour Produit 3
+insert into Process (id, nom, description, product_id, commentaire) values
+(5, 'Assemblage du Freesebe Glow', 'Processus d''assemblage du Freesebe Glow.', 3, 'Assemblage spécial pour une lueur dans l''obscurité.'),
+(6, 'Test de luminosité du Freesebe Glow', 'Test de luminosité pour le Freesebe Glow.', 3, 'Test effectué pour assurer la luminosité nocturne.');
+
+-- Processus pour Produit 4
+insert into Process (id, nom, description, product_id, commentaire) values
+(7, 'Assemblage du Freesebe Junior', 'Processus d''assemblage du Freesebe Junior.', 4, 'Assemblage conçu spécialement pour les enfants.'),
+(8, 'Vérification de sécurité du Freesebe Junior', 'Contrôle de sécurité du Freesebe Junior.', 4, 'Test de sécurité pour les enfants.');
+
+-- Processus pour Produit 5
+insert into Process (id, nom, description, product_id, commentaire) values
+(9, 'Assemblage du Freesebe Ultimate', 'Processus d''assemblage du Freesebe Ultimate.', 5, 'Assemblage pour des performances de pointe.'),
+(10, 'Test de performance du Freesebe Ultimate', 'Test de performance approfondi.', 5, 'Test pour garantir des performances optimales.');
+
+alter sequence Ingredient_SEQ restart with 21;
+alter sequence Product_SEQ restart with 5;
+alter sequence ProductIngredient_SEQ restart with 12;
+alter sequence Process_SEQ restart with 11;
