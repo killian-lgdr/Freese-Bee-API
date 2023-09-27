@@ -58,4 +58,50 @@ insert into Ingredient (id, nom, description) values (19, 'Marqueur thermochromi
 -- Ingrédient 20
 insert into Ingredient (id, nom, description) values (20, 'Élastique en caoutchouc naturel', 'Pour une flexibilité supérieure.');
 
-alter sequence Ingredient_seq restart with 21;
+-- Produit 1
+insert into Product (id, nom, description, pUHT, gamme) values (1, 'Freesebe Classique', 'Le freesebe classique pour une utilisation en plein air.', '19.99', 'Standard');
+
+-- Produit 2
+insert into Product (id, nom, description, pUHT, gamme) values (2, 'Freesebe Pro', 'Un freesebe professionnel avec une précision accrue.', '29.99', 'Pro');
+
+-- Produit 3
+insert into Product (id, nom, description, pUHT, gamme) values (3, 'Freesebe Glow', 'Le freesebe qui brille dans l''obscurité pour des parties nocturnes.', '24.99', 'Lumineux');
+
+-- Produit 4
+insert into Product (id, nom, description, pUHT, gamme) values (4, 'Freesebe Junior', 'Un freesebe conçu spécialement pour les enfants.', '14.99', 'Enfant');
+
+-- Produit 5
+insert into Product (id, nom, description, pUHT, gamme) values (5, 'Freesebe Ultimate', 'Le freesebe ultime pour des performances de pointe.', '39.99', 'Haut de gamme');
+
+-- Relation entre Produit 1 et Ingrédient 1
+insert into ProductIngredient (id, product_id, ingredient_id, grammage) values (1, 1, 1, 100);
+
+-- Relation entre Produit 1 et Ingrédient 2
+insert into ProductIngredient (id, product_id, ingredient_id, grammage) values (2, 1, 2, 200);
+
+-- Relation entre Produit 1 et Ingrédient 3
+insert into ProductIngredient (id, product_id, ingredient_id, grammage) values (3, 1, 3, 150);
+
+-- Relation entre Produit 2 et Ingrédient 4
+insert into ProductIngredient (id, product_id, ingredient_id, grammage) values (4, 2, 4, 180);
+
+-- Relation entre Produit 2 et Ingrédient 5
+insert into ProductIngredient (id, product_id, ingredient_id, grammage) values (5, 2, 5, 250);
+
+-- Relation entre Produit 3 et Ingrédient 1
+insert into ProductIngredient (id, product_id, ingredient_id, grammage) values (6, 3, 1, 120);
+
+-- Relation entre Produit 3 et Ingrédient 6
+insert into ProductIngredient (id, product_id, ingredient_id, grammage) values (7, 3, 6, 90);
+
+-- Relation entre Produit 4 et Ingrédient 2
+insert into ProductIngredient (id, product_id, ingredient_id, grammage) values (8, 4, 2, 180);
+
+-- Relation entre Produit 4 et Ingrédient 7
+insert into ProductIngredient (id, product_id, ingredient_id, grammage) values (9, 4, 7, 50);
+
+-- Relation entre Produit 5 et Ingrédient 3
+insert into ProductIngredient (id, product_id, ingredient_id, grammage) values (10, 5, 3, 220);
+
+-- Relation entre Produit 5 et Ingrédient 8
+insert into ProductIngredient (id, product_id, ingredient_id, grammage) values (11, 5, 8, 75);
