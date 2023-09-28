@@ -13,7 +13,7 @@ import org.jboss.resteasy.reactive.RestResponse;
 import java.util.List;
 
 @Path("/ingredient")
-@RolesAllowed({"R&D"})
+//@RolesAllowed({"R&D"})
 public class IngredientResource {
 
     Logger logger;
