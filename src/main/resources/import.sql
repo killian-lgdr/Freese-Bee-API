@@ -132,6 +132,6 @@ insert into Process (id, nom, description, product_id, commentaire) values
 (10, 'Test de performance du Freesebe Ultimate', 'Test de performance approfondi.', 5, 'Test pour garantir des performances optimales.');
 
 alter sequence Ingredient_SEQ restart with 21;
-alter sequence Product_SEQ restart with 5;
+alter sequence Product_SEQ restart with 6;
 alter sequence ProductIngredient_SEQ restart with 12;
 alter sequence Process_SEQ restart with 11;
