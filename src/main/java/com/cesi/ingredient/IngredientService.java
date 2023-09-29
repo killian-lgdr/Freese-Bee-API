@@ -1,5 +1,6 @@
 package com.cesi.ingredient;
 
+import com.cesi.ProductIngredient;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
@@ -36,6 +37,10 @@ public class IngredientService {
 
     public void deleteIngredient(Long id) {
         Ingredient ingredient = Ingredient.findById(id);
-        ingredient.delete();
+        if (ingredient != null) {
+            // Supprime toutes les occurrences de cet ingrédient dans ProductIngredient
+            ProductIngredient.delete("ingredient = ?1", ingredient);
+            ingredient.delete();
+        }
     }
 }

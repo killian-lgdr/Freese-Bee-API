@@ -1,7 +1,6 @@
 package com.cesi.ingredient;
 
-
-
+import jakarta.annotation.security.RolesAllowed;
 import jakarta.validation.Valid;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.Context;
@@ -14,6 +13,7 @@ import org.jboss.resteasy.reactive.RestResponse;
 import java.util.List;
 
 @Path("/ingredient")
+//@RolesAllowed({"R&D"})
 public class IngredientResource {
 
     Logger logger;

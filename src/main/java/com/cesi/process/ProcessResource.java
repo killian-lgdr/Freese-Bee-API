@@ -1,5 +1,6 @@
 package com.cesi.process;
 
+import jakarta.annotation.security.RolesAllowed;
 import jakarta.validation.Valid;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.Context;
@@ -22,6 +23,7 @@ public class ProcessResource {
     }
 
     @GET
+    //@RolesAllowed({"Production","Commerce","R&D"})
     public RestResponse<List<Process>> getAllProcesses() {
         List<Process> processes = service.findAllProcesses();
         logger.debug("Total number of processes: " + processes.size());
