@@ -1,5 +1,6 @@
 package com.cesi.product;
 
+import jakarta.annotation.security.RolesAllowed;
 import jakarta.validation.Valid;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.Context;
@@ -23,6 +24,7 @@ public class ProductResource {
     }
 
     @GET
+    @RolesAllowed({"R&D", "Production", "Commerce"})
     public RestResponse<List<Product>> getAllProducts() {
         List<Product> products = service.findAllProducts();
         logger.debug("Total number of products: " + products.size());
@@ -30,6 +32,7 @@ public class ProductResource {
     }
 
     @GET
+    @RolesAllowed({"R&D", "Production", "Commerce"})
     @Path("/{id}")
     public RestResponse<Product> getProduct(@PathParam("id") Long id) {
         Product product = service.findProductById(id);
@@ -43,6 +46,7 @@ public class ProductResource {
     }
 
     @POST
+    @RolesAllowed({"R&D"})
     public RestResponse<Void> createProduct(@Valid Product product, @Context UriInfo uriInfo) {
         product = service.createProduct(product);
         UriBuilder builder = uriInfo.getAbsolutePathBuilder().path(Long.toString(product.id));
@@ -51,6 +55,7 @@ public class ProductResource {
     }
 
     @PUT
+    @RolesAllowed({"R&D"})
     public RestResponse<Product> updateProduct(@Valid Product product) {
         product = service.updateProduct(product);
         logger.debug("Product updated with new value: " + product);
@@ -58,6 +63,7 @@ public class ProductResource {
     }
 
     @DELETE
+    @RolesAllowed({"R&D"})
     @Path("/{id}")
     public RestResponse<Void> deleteProduct(@PathParam("id") Long id) {
         service.deleteProduct(id);

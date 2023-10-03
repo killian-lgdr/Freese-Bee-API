@@ -23,7 +23,7 @@ public class ProcessResource {
     }
 
     @GET
-    //@RolesAllowed({"Production","Commerce","R&D"})
+    @RolesAllowed({"R&D", "Production"})
     public RestResponse<List<Process>> getAllProcesses() {
         List<Process> processes = service.findAllProcesses();
         logger.debug("Total number of processes: " + processes.size());
@@ -31,6 +31,7 @@ public class ProcessResource {
     }
 
     @GET
+    @RolesAllowed({"R&D", "Production"})
     @Path("/{id}")
     public RestResponse<Process> getProcess(@PathParam("id") Long id) {
         Process process = service.findProcessById(id);
@@ -44,6 +45,7 @@ public class ProcessResource {
     }
 
     @POST
+    @RolesAllowed({"R&D"})
     public RestResponse<Void> createProcess(@Valid Process process, @Context UriInfo uriInfo) {
         process = service.createProcess(process);
         UriBuilder builder = uriInfo.getAbsolutePathBuilder().path(Long.toString(process.id));
@@ -52,6 +54,7 @@ public class ProcessResource {
     }
 
     @PUT
+    @RolesAllowed({"R&D"})
     public RestResponse<Process> updateProcess(@Valid Process process) {
         process = service.updateProcess(process);
         logger.debug("Process updated with new value: " + process);
@@ -59,6 +62,7 @@ public class ProcessResource {
     }
 
     @DELETE
+    @RolesAllowed({"R&D"})
     @Path("/{id}")
     public RestResponse<Void> deleteProcess(@PathParam("id") Long id) {
         service.deleteProcess(id);
