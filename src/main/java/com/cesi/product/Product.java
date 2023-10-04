@@ -1,7 +1,6 @@
 package com.cesi.product;
 
 import com.cesi.ProductIngredient;
-import com.cesi.ingredient.Ingredient;
 import io.quarkus.hibernate.orm.panache.PanacheEntity;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;

@@ -22,6 +22,7 @@ public class IngredientResource {
         this.service = service;
         this.logger = logger;
     }
+
     @GET
     @RolesAllowed({"R&D", "Production", "Commerce"})
     public RestResponse<List<Ingredient>> getAllIngredient() {
